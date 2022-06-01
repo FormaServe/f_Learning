@@ -1,0 +1,21 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+# Company Details
+FormaServe:
+   name: FormaServe Systems Ltd
+   address: Tottenham
+   post_code: N17
+   VAT: 123-456-789
+   Reg_No: 987654321
+
+# Lists
+countries:
+   - England
+   - Wales
+   - Scotland
+   - Sweden
+
+

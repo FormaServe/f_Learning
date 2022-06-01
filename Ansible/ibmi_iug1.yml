@@ -1,0 +1,101 @@
+# Ansible Workshop on IBM i
+#
+# Part 1
+#
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+  - name: Create User
+    debug:
+      msg: "Creating user {{ item }}"
+
+  - name: Create User Profile
+    ibmi_user_and_group:
+      operation: create
+      user: "{{ item }}"
+      password: 'abc123'
+      user_class: '*SECOFR'
+      status: '*ENABLED'
+      owner: '*USRPRF'
+      parameters: 'HOMEDIR("/home/{{ item }}") CURLIB({{ item }})'
+      text: 'Created using Ansible Playbook by FormaServe'
+      become_user: QSECOFR
+      become_user_password: 'NoIdea'
+    ignore_errors: true
+
+  - name: Create user library
+    ibmi_cl_command:
+      cmd: crtlib "{{ item }}" TEXT('Created using Ansible by FormaServe')
+      joblog: false
+    ignore_errors: true
+
+  - name: Create home directory for user
+    file:
+      path: /home/{{ item }}
+      state: directory
+      owner: "{{ item }}"
+      mode: 0744
+    ignore_errors: true
+
+  - name: Create Ansible directory for user
+    ibmi_cl_command:
+      cmd: crtdir '/home/{{ item }}/ansible'
+    ignore_errors: true
+
+  - name: Create .ssh directory for user
+    ibmi_cl_command:
+      cmd: crtdir '/home/{{ item }}/.ssh'
+    ignore_errors: true
+
+  - name: Creating an empty authorized_keys
+    file:
+      path: "/home/{{ item }}/.ssh/authorized_keys"
+      state: touch
+    ignore_errors: true
+
+  - name: Set authority of home directory to be 0700
+    file:
+      path: '/home/{{ item }}'
+      state: directory
+      mode: '0700'
+      owner: '{{ item }}'
+    ignore_errors: true
+
+  - name: Set authority of .ssh directory to be 0700
+    file:
+      path: "/home/{{ item }}/.ssh"
+      state: directory
+      mode: '0700'
+      owner: '{{ item }}'
+    ignore_errors: true
+
+  - name: The authority of authorized_keys has to be full access (0600)
+    file:
+      path: '/home/{{ item }}/.ssh/authorized_keys'
+      state: file
+      mode: '0600'
+      owner: '{{ item }}'
+    ignore_errors: true
+
+  - name: Creating an empty .profile in home directory
+    file:
+      path: "/home/{{ item }}/.profile"
+      state: touch
+    ignore_errors: true
+
+  - name: Setup .profile with OSS path & Prompt
+    copy:
+      dest: '/home/{{ item }}/.profile'
+      content: |
+        PATH=/QOpenSys/pkgs/bin:$PATH
+        export PATH
+        export PS1="\[\e[31m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\] \[\e[34m\]\d\[\e[m\] \[\e[36m\]\A\[\e[m\] \[\e[35m\]\w\[\e[m\] \\$  "
+
+  - name: The authority of authorized_keys has to be full access (0600)
+    file:
+      path: '/home/{{ item }}/.profile'
+      state: file
+      mode: '0600'
+      owner: '{{ item }}'
+    ignore_errors: true

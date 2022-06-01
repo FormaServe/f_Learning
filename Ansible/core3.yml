@@ -1,0 +1,18 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+
+# ensure your have gather_facts on otherwise you get a 'Variable is not defined' error!
+
+---
+
+ - name: Show Error Handling
+   hosts: localhost
+   gather_facts: true
+
+   tasks:
+
+     - name: System timestamp - date
+       debug:
+         var=ansible_date_time

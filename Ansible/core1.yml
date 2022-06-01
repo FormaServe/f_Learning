@@ -1,0 +1,24 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+
+---
+
+ - name: Use YUM
+   hosts: ibmi
+   gather_facts: true
+
+   tasks:
+     - name: Install Open Source packages
+       yum:
+         name:
+           - nginx
+           - postgresql
+           - postgresql-server
+         state: present
+     
+
+
+
+

@@ -1,0 +1,9 @@
+Server|Description|IP Address
+Sun|Main AD Server|10.0.0.2
+Rhea|Main Web Server|81.142.39.106
+Styx|CCTV|10.0.3.2
+Norfolk|Development Team|10.0.0.105
+Jupiter|Accounts|10.0.0.104
+Galatea|Production IBM i|10.0.0.36
+Proteus|Client IBM i|10.0.0.39
+Sao|Training IBM i|10.0.0.37

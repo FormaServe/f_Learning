@@ -1,0 +1,26 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- name: Create a new user on all IBMi hosts
+  hosts: ibmi
+  vars:
+    user_profile:
+      - AJRiddle
+      - AEmilyY
+      - AJessicaJ
+  collections:
+    - ibm.power_ibmi
+
+  tasks:
+  - name: Create new users
+    ibmi_user_and_group:
+      operation: 'create'
+      user: "{{ item }}"
+      password: 'abc123'
+      user_class: '*SECOFR'
+      become_user: 'QSECOFR'
+      become_user_password: 'NoIdea'
+      text: 'Created using Ansible Playbook'
+    loop: "{{ user_profile }}"

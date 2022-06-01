@@ -1,0 +1,2 @@
+ServerName,IP,Description,Ping,DNS,SSH
+Sun,10.0.0.2,Main AD Server,OK,FAIL,

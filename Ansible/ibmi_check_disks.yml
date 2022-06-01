@@ -1,0 +1,58 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+
+## to skip debug run
+## ansible-playbook ibmi_check_disks.yml --skip-tags debug
+
+## to skip email run
+## ansible-playbook ibmi_check_disks.yml --skip-tags email
+
+## to only run SQL
+## ansible-playbook ibmi_check_disks.yml --tags query
+
+---
+- name: Check disks on all IBMi hosts
+  hosts: ibmi
+  gather_facts: true
+  collections:
+    - ibm.power_ibmi
+
+  tasks:
+  - name: Query Disk Status
+    ibmi_sql_query:
+      sql: "select unit_number, resource_name, protection_status
+        from QSYS2.SYSDISKSTAT
+        where RESOURCE_STATUS = 'ACTIVE' and protection_status = 'FAILED'"
+      joblog: true
+    register: disk_results
+    tags:
+      - query
+
+  - name: Show disk output
+    debug:
+      msg: "Failed disk count: {{ disk_results.row_count }} Results: {{ disk_results.row }}"
+    tags:
+      - debug
+
+  - name: Send email to support
+    mail:
+     host: mail.formaserve.co.uk
+     port: 25
+     username: 'webmaster@***********''
+     password: 'NoIdea'
+     to: Andy Youens <andy@formaserve.co.uk>
+     from: FormaServe Admin<fss@formaserve.co.uk>
+     subject: "Disk Check on {{ ansible_hostname }}"
+     subtype: html
+     body: '<h4>Ansible disk checker</h4>
+       <p>There are {{ disk_results.row_count }} disk(s) in error.
+       <br><br>
+       <p>Results are:</p>
+       <p>{{ disk_results.row }}</p>'
+    tags:
+      - email
+
+
+

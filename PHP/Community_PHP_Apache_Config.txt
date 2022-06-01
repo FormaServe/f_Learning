@@ -1,0 +1,57 @@
+## Example of Apache Community PHP settings demo'd during FormaServe f_Learning video set
+## normal disclaimers in place, we are not responsible if you use this config and things go bad ....
+
+## FormaServe Systems Ltd - September 2020
+
+
+# Configuration originally created by Create HTTP Server wizard on Thu Sep 17 15:05:57 BST 2020
+Listen *:8099
+DocumentRoot /www/comphp/htdocs
+TraceEnable Off
+
+##########################################################################################
+# Lines added by FormaServe for Community PHP integration
+
+# This loads the Apache FastCGI support originally created for Zend
+LoadModule zend_enabler_module /QSYS.LIB/QHTTPSVR.LIB/QZFAST.SRVPGM
+
+# This tells Apache that any file with a .php extension should be
+# executed by the FastCGI application/x-httpd-php handler
+AddType application/x-httpd-php .php
+AddHandler fastcgi-script .php
+
+# Add compression to pages
+LoadModule deflate_module /QSYS.LIB/QHTTPSVR.LIB/QZSRCORE.SRVPGM
+AddOutputFilterByType DEFLATE application/x-httpd-php application/json text/css application/x-javascript application/javascript text/html
+
+# Extra bits for performance
+TimeOut 30000
+KeepAliveTimeout 30
+HotBackup Off
+
+# Ensure PHP executed before html
+DirectoryIndex index.php index.html
+
+##########################################################################################
+
+Options -FollowSymLinks
+LogFormat "%h %T %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+LogFormat "%{Cookie}n \"%r\" %t" cookie
+LogFormat "%{User-agent}i" agent
+LogFormat "%{Referer}i -> %U" referer
+LogFormat "%h %l %u %t \"%r\" %>s %b" common
+CustomLog logs/access_log combined
+LogMaint logs/access_log 7 0
+LogMaint logs/error_log 7 0
+SetEnvIf "User-Agent" "Mozilla/2" nokeepalive
+SetEnvIf "User-Agent" "JDK/1\.0" force-response-1.0
+SetEnvIf "User-Agent" "Java/1\.0" force-response-1.0
+SetEnvIf "User-Agent" "RealPlayer 4\.0" force-response-1.0
+SetEnvIf "User-Agent" "MSIE 4\.0b2;" nokeepalive
+SetEnvIf "User-Agent" "MSIE 4\.0b2;" force-response-1.0
+<Directory />
+   Require all denied
+</Directory>
+<Directory /www/comphp/htdocs>
+   Require all granted
+</Directory>

@@ -1,0 +1,20 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- name: Get latest Cum  PTFs on all IBMi hosts
+  hosts: ibmi
+  gather_facts: true
+  collections:
+    - ibm.power_ibmi
+
+  tasks:
+    - name: Download a PTF group
+      ibmi_download_fix:
+        ptf_id: "*CUMPKG"
+        delivery_format: "*IMAGE"
+        image_directory: "/iptf"
+        become_user: "QSECOFR"
+        become_user_password: "NoIdea"
+

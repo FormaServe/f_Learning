@@ -1,0 +1,20 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- name: Check PTFs on all IBMi hosts
+  hosts: ibmi
+
+  tasks:
+
+    - name: Check specific PTF groups
+      ibm.power_ibmi.ibmi_fix_group_check:
+        groups:
+        - "SF99730"
+
+    - name: Check the PTF groups without certificate verification
+      ibm.power_ibmi.ibmi_fix_group_check:
+        groups:
+        -  "SF99730"
+        validate_certs: false

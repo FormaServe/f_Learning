@@ -1,0 +1,21 @@
+
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+
+---
+- name: Create Ansible environment for iUG Workshop
+  hosts: ibmi
+  gather_facts: false
+  collections:
+    - ibm.power_ibmi
+  vars:
+    user: AJESSICAJ
+
+  tasks:
+  - name: Display user variable
+    debug:
+     msg:  "User is: {{ user }}"
+
+

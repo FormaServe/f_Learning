@@ -1,0 +1,14 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+# Keep the vars_files in exactly the same format as you would for vars
+#
+#    vars_files:
+#        - apacheconf.yml
+#
+key_file: /etc/apache2/ssl/formaserve.key
+cert_file: /etc/apache2/ssl/formaserve.cert
+server_uri: www.formaserve.co.uk
+company: formaserve
+

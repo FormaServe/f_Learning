@@ -1,0 +1,14 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- hosts: ibmi
+  vars_files:
+    - vars/user_profile.yml
+
+  tasks:
+  - name: List new users
+    debug:
+      msg: "{{ user_profile.user }}"
+

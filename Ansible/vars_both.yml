@@ -1,0 +1,14 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+
+---
+- hosts: all
+  remote_user: root
+  vars:
+    favcolor: blue
+  vars_files:
+    - /vars/external_vars.yml
+
+  tasks:

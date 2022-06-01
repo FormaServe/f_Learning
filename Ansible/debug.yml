@@ -1,0 +1,9 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+  - name: Create User
+    debug:
+      msg: "Creating user {{ item }}"
+

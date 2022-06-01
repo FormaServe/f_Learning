@@ -1,0 +1,38 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- name: Delete Ansible environment for iUG Workshop
+  hosts: ibmi
+  gather_facts: false
+  collections:
+    - ibm.power_ibmi
+  vars:
+    users:
+    # - AJESSICAJ
+    - AEMILYY
+    - ASAMMYJ
+    - ACHLOEY
+    - AELLIEJ
+
+  tasks:
+  - name: Delete User Profile
+    ibmi_user_and_group:
+      operation: delete
+      user: "{{ item }}"
+      parameters: 'OWNOBJOPT(*DLT)'
+      become_user: QSECOFR
+      become_user_password: 'NoIdea'
+    loop: "{{ users }}"
+
+  - name: Delete user library
+    ibmi_cl_command:
+      cmd: dltlib "{{ item }}"
+    loop: "{{ users }}"
+
+  - name: Delete home directory for user
+    file:
+      path: /home/{{ item }}
+      state: absent
+    loop: "{{ users }}"

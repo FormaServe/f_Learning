@@ -1,0 +1,18 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+
+---
+- name: Check PTFs on all IBMi hosts
+  hosts: ibmi
+  gather_facts: true
+  collections:
+    - ibm.power_ibmi
+
+  tasks:
+  - name: Get cum ptf fix
+    ibmi_display_fix:
+      product: '5770SS1'
+      ptf: 'SI70439'
+      release: 'V7R3M0'

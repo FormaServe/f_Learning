@@ -1,0 +1,12 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- name: Show all the info ansible knows about for each host
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - debug:
+        var: ansible_facts

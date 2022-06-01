@@ -1,0 +1,22 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+
+ - name: Copying files from to IFS
+   hosts: ibmi
+   gather_facts: true
+
+   tasks:
+   - name: Copy file to new environment
+     copy:
+       src: /ansible/environment.txt
+       dest: /formaserve/test/config.ini
+       owner: QSECOFR
+
+
+
+
+
+

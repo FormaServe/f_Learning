@@ -1,0 +1,71 @@
+      *****************************************************************
+      **  Show News Feeds                                            **
+      **                                                             **
+      **  Andy Youens                                                **
+      **  FormaServe Systems Ltd                                     **
+      **  www.formaserve.co.uk                                       **
+      **  April 2018                                                 **
+      **                                                             **
+      *****************************************************************
+
+     A          R SC01                      TEXT('News Screen')
+     A                                      CA03(03 'F3=Exit')
+     A                                      CA05(05 'F3=Refresh')
+     A                                      CA12(03)
+                                            CLEAR
+
+     A                                  1  2'FS004'
+     A                                      COLOR(BLU)
+     A                                  1 30'FormaServe Systems Ltd'
+     A                                      DSPATR(HI)
+     A                                  1 70DATE(*YY)
+     A                                      EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  2  2SYSNAME
+     A                                      COLOR(BLU)
+     A                                  2 32'Get BBC News Feeds'
+     A                                      COLOR(RED)
+     A                                  2 72TIME
+     A                                      COLOR(BLU)
+
+     A            S1NEW1        78   O  4  1
+     A            S1LIN1        77   O  5  3COLOR(BLU)
+
+     A            S1NEW2        78   O  6  1
+     A            S1LIN2        77   O  7  3COLOR(BLU)
+
+     A            S1NEW3        78   O  8  1
+     A            S1LIN3        77   O  9  3COLOR(BLU)
+
+     A            S1NEW4        78   O 10  1
+     A            S1LIN4        77   O 11  3COLOR(BLU)
+
+     A            S1NEW5        78   O 12  1
+     A            S1LIN5        77   O 13  3COLOR(BLU)
+
+     A            S1NEW6        78   O 14  1
+     A            S1LIN6        77   O 15  3COLOR(BLU)
+
+     A            S1NEW7        78   O 16  1
+     A            S1LIN7        77   O 17  3COLOR(BLU)
+
+     A            S1NEW8        78   O 18  1
+     A            S1LIN8        77   O 19  3COLOR(BLU)
+
+     A            S1NEW9        78   O 20  1
+     A            S1LIN9        77   O 21  3COLOR(BLU)
+
+     A            S1NEW10       78   O 22  1
+     A            S1LIN10       77   O 23  3COLOR(BLU)
+
+     A                                 24  7'F3=Exit'
+     A                                      COLOR(RED)
+     A                                 24 36'F5=Refresh'
+     A                                      COLOR(RED)
+     A                                 24 60'F12=Previous'
+     A                                      COLOR(RED)
+
+     A          R DUMMY                     TEXT('Dummy Format')
+     A                                      ASSUME
+     A                                  1  2' '
+     A                                      DSPATR(ND)

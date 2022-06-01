@@ -1,0 +1,38 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+# Create a mew user environment, on all IBM i partitions
+# prior to running iUG Workshop on Ansible
+#
+---
+- name: Create Ansible environment for iUG Workshop
+  hosts: ibmi
+  gather_facts: false
+  collections:
+    - ibm.power_ibmi
+  vars:
+    users:
+    - A1
+    # - A2
+    # - A3
+    # - A4
+    # - A5
+
+  tasks:
+
+    - name: Set default shell to BASH for all users
+      ibmi_sql_execute:
+        sql: "CALL QSYS2.SET_PASE_SHELL_INFO('*DEFAULT', '/QOpenSys/pkgs/bin/bash')"
+        joblog: true
+        become_user: QSECOFR
+        become_user_password: 'NoIdea'
+      register: shell_results
+      tags:
+        - bash
+
+    - name: Looping thro Users
+      include_tasks: ibmi_iug1.yml
+      loop: "{{ users }}"
+      tags:
+        - users

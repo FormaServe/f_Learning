@@ -1,0 +1,18 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+
+ - name: Write to IFS
+   hosts: ibmi
+   gather_facts: true
+
+   tasks:
+
+    - name: Write some content in a file
+      copy:
+        dest: /andy/formaserve.txt
+        content: |
+          Good Morning
+          Good Afternoon

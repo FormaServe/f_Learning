@@ -1,0 +1,18 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+
+  - name: Write to IFS
+    hosts: ibmi
+    gather_facts: true
+
+  tasks:
+
+  - name: Use git to clone Repo & archive
+    git:
+        repo: https://github.com/formaserve/f_learning.git
+        dest: /node_apps/training
+        archive: /tmp/training-examples.zip
+

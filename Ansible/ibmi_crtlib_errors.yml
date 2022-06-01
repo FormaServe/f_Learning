@@ -1,0 +1,32 @@
+# Ansible Workshop on IBM i
+# Copyright © FormaServe Systems Ltd 2022
+# April 2022
+#
+---
+- hosts: ibmi
+  gather_facts: false
+  collections:
+    - ibm.power_ibmi
+
+  tasks:
+  - name: run the CL command to create a library
+    ibmi_cl_command:
+      cmd: crtlib lib(samyouens)
+    register: crt_lib_result
+
+  - name: run the CL command to create the library again
+    ibmi_cl_command:
+      cmd: crtlib lib(samyouens)
+      joblog: true
+    register: crt_lib_repeated_result
+    ignore_errors: true
+
+  - name: assert the repeating creation of the library failed
+    assert:
+      that:
+      - (crt_lib_repeated_result.job_log | selectattr('MESSAGE_ID', 'equalto', 'CPF2111') | map(attribute='MESSAGE_ID') | list | length) >= 1
+
+  - name: run the CL command to delete the library
+    ibmi_cl_command:
+      cmd: dltlib samyouens
+      joblog: false
