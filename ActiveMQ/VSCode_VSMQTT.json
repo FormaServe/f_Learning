@@ -1,0 +1,11 @@
+{
+  "vsmqtt.brokerProfiles": [
+    {
+	  "_comment1": "VS Code settings for VSMQTT Extension",
+      "name": "Galatea IBMi",
+      "host": "galatea",
+      "port": 1883,
+      "clientId": "vsmqtt_client"
+    }
+  ]
+}
