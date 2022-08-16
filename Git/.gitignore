@@ -1,0 +1,22 @@
+# Logs
+public/logs/
+*.log
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+.envrc
+/.devcontainer/devcontainer.env
+
+# database objects & migrations
+migrations
+db/*.sqlite
+db/*.sql
+
+# output files
+nohup.out
+
