@@ -8,7 +8,9 @@ This repo contains information that we hope you will find helpful when completin
 
 You will also find examples & information that we have used when giving presentations/workshops at IBM i User Groups around the world.
 
-We are still providing IBM i training in these strange times.  [Get in contact here.](https://www.formaserve.co.uk/location.php) if you have any questions or comments.  We will be happy to help you.
+We are still providing IBM i training in these strange times.  [Get in contact here.](https://www.formaserve.co.uk/location.php)
+
+If you have any questions or comments, we will be happy to help you.
 
 ## 🪜 Examples
 
