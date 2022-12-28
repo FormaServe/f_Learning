@@ -20,14 +20,14 @@ Check out the sub-directories above to find examples &amp; information on our tr
 
 While you are here, why not visit our training videos, [which can be found here.](https://learning.formaserve.co.uk)
 
-![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
-![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/formaserve?style=social)
-
 ## ✔️ YouTube Videos
 
 - Our YouTube channel can be found [here.](https://www.youtube.com/FormaServeSystemsLtdLoughton)
 - Subscribe to our YouTube channel to get the latest news &amp; updates on our f_Learning videos at this [link.](https://www.youtube.com/FormaServeSystemsLtdLoughton?sub_confirmation=1 )
+
+![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
+![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/formaserve?style=social)
 
 ## 🔗 IBM Customer Stories - FormaServe
 
@@ -51,6 +51,7 @@ FormaServe Systems Ltd - _All work_ - [FormaServe](https://www.formaserve.co.uk)
 
 - Andy Youens - FormaServe
 - Nick Youens - FormaServe
+- Jane Youens - FormaServe
 
 ## 👍 Contributing
 
@@ -80,4 +81,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- **© 1990 - 2022 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
+- **© 1990 - 2023 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
