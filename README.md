@@ -18,7 +18,7 @@ Check out the sub-directories above to find examples &amp; information on our tr
 
 ## 📹 Our IBM i Training Videos
 
-While you are here, why not visit our training videos, which can be found [here.](https://learning.formaserve.co.uk)
+While you are here, why not visit our training videos, [which can be found here.](https://learning.formaserve.co.uk)
 
 ![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
 ![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)

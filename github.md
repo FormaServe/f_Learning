@@ -2,6 +2,10 @@
 
 <img src="/images/Logo.png" align="right">
 
+![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
+![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/formaserve?style=social)
+
 - Remote repository -> https://github.com/FormaServe/f_Learning
 - Local repository -> S:\FormaServe\Github\f_Learning_GitHub
 
