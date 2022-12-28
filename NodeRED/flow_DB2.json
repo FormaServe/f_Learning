@@ -1,0 +1,278 @@
+[
+    {
+        "id": "a8fe4cce55a0dcf7",
+        "type": "tab",
+        "label": "PowerWire 202212",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3517c685d0d74765",
+        "type": "DB2 for i",
+        "z": "a8fe4cce55a0dcf7",
+        "mydb": "06efb040e04132e7",
+        "name": "Galatea",
+        "arraymode": true,
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "a5ecfb1bd4d73b04"
+            ]
+        ]
+    },
+    {
+        "id": "5326ddadb94bfd26",
+        "type": "inject",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "select * from qiws.qcustcdt",
+        "payloadType": "str",
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "3517c685d0d74765"
+            ]
+        ]
+    },
+    {
+        "id": "a5ecfb1bd4d73b04",
+        "type": "debug",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e56271b69dead870",
+        "type": "DB2 for i",
+        "z": "a8fe4cce55a0dcf7",
+        "mydb": "06efb040e04132e7",
+        "name": "Galatea",
+        "arraymode": true,
+        "x": 540,
+        "y": 400,
+        "wires": [
+            [
+                "ba9f81ce0b933118"
+            ]
+        ]
+    },
+    {
+        "id": "75d1c6882a4ae2cf",
+        "type": "inject",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "call qcmdexc('sndmsg hello andy')",
+        "payloadType": "str",
+        "x": 330,
+        "y": 400,
+        "wires": [
+            [
+                "e56271b69dead870"
+            ]
+        ]
+    },
+    {
+        "id": "ba9f81ce0b933118",
+        "type": "debug",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "70424d419031788d",
+        "type": "comment",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "Get  all QIWS.QCUSTCDT records",
+        "info": "",
+        "x": 400,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e8ccfa98904066de",
+        "type": "comment",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "Call SP to execute commands",
+        "info": "",
+        "x": 380,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "21115f874b066714",
+        "type": "inject",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "system 'crtlib DEC2022'",
+        "payloadType": "str",
+        "x": 320,
+        "y": 620,
+        "wires": [
+            [
+                "44695dcb23d593f9"
+            ]
+        ]
+    },
+    {
+        "id": "6a4ef2dc86abf9c8",
+        "type": "debug",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "stdout",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "44695dcb23d593f9",
+        "type": "exec",
+        "z": "a8fe4cce55a0dcf7",
+        "command": "",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 530,
+        "y": 620,
+        "wires": [
+            [
+                "6a4ef2dc86abf9c8"
+            ],
+            [
+                "8c37fa97c79a3bc9"
+            ],
+            [
+                "736957dd32e1d347"
+            ]
+        ],
+        "outputLabels": [
+            "stdout",
+            "stderr",
+            "return code"
+        ]
+    },
+    {
+        "id": "8c37fa97c79a3bc9",
+        "type": "debug",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "stderr",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "736957dd32e1d347",
+        "type": "debug",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "return code",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "fc14ec308527d03f",
+        "type": "comment",
+        "z": "a8fe4cce55a0dcf7",
+        "name": "Execute commands",
+        "info": "",
+        "x": 290,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "06efb040e04132e7",
+        "type": "DB2 for i Config",
+        "cnnname": "Galatea",
+        "db": "*LOCAL",
+        "keepalive": true
+    }
+]
