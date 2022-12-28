@@ -20,6 +20,10 @@ Check out the sub-directories above to find examples &amp; information on our tr
 
 While you are here, why not visit our training videos, which can be found [here.](https://learning.formaserve.co.uk)
 
+![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
+![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/formaserve?style=social)
+
 ## ✔️ YouTube Videos
 
 - Our YouTube channel can be found [here.](https://www.youtube.com/FormaServeSystemsLtdLoughton)
