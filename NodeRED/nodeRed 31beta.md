@@ -10,10 +10,11 @@ Node-RED version 3.1.0-beta.1 has been released to the public.
 
 We have this running, without any issues at this time, on our IBM i server.
 
-## To install node-RED Beta in its own directory, without comprimising your existing installation, follow these instructions.
+To install node-RED Beta in its own directory, without comprimising your existing installation, follow these instructions.
+
+## Install Instructions
 
 ``` bash
-node-red
 mkdir node-red-310
 cd node-red-310
 mkdir node_modules
