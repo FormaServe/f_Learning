@@ -4,7 +4,7 @@
 
  For full disclaimer see https://www.formaserve.co.uk/examples.php
 
- © - FormaServe Systems Ltd.  1990 - 2020
+ © - FormaServe Systems Ltd.  1990 - 2023
  www.FormaServe.co.uk
 
 */
@@ -25,11 +25,9 @@ Create Or Replace Table Contact_Info (
 /*  Create History Table   */
 Create Table Hist_Contact_Info Like Contact_Info ;
 
-
 /* Link the 2 tables together & start temporal versioning  */
 Alter Table Contact_Info
   Add Versioning Use History Table Hist_Contact_Info ;
-
 
 /*  Change an existing table to a temporal table   */
 Alter Table Employee
@@ -38,15 +36,12 @@ Alter Table Employee
   Add Column Ts_Id Timestamp(12) Not Null Generated Always As Transaction Start Id
   Add Period System_Time (Sys_Start, Sys_End) ;
 
-
 /* Create History Table  */
 Create Table Hist_Employee Like Employee ;
-
 
 /*  Start versioning on existing table  */
 Alter Table Employee
   Add Versioning Use History Table Hist_Employee ;
-
 
 /* Create History Table  */
 Create Table Hist_Clients Like Clients ;
@@ -55,21 +50,17 @@ Create Table Hist_Clients Like Clients ;
 Alter Table Clients
   Add Versioning Use History Table Hist_Clients ;
 
-
 /*  Create History Table   */
 Create table hist_suppliers like suppliers ;
-
 
 /* Start Temporal   */
 Alter table suppliers
     add versioning use history table hist_suppliers ;
 
-
 /*  Select employees at a certain time   */
 Select * from employee
   for system_time as of '2020-01-10-10.00.00'
   where emid = 86 ;
-
 
 /*  Select employees between a date range, using from & to   */
 Select * from employee
@@ -86,7 +77,10 @@ Select * from employee
 alter table employee
  drop versioning ;
 
-
-
-
-
+/*  Partition History table  */
+alter table hist_accounts
+  partition by range (row_end)
+  (partition  p2016 starting ('01/01/2016') inclusive ending ('01/01/2017') exclusive,
+   partition  p2017 starting ('01/01/2017') inclusive ending ('01/01/2018') exclusive,
+   partition  p2018 starting ('01/01/2018') inclusive ending ('01/01/2019') exclusive,
+   partition  p2019 starting ('01/01/2019') inclusive ending ('01/01/2020') exclusive );
