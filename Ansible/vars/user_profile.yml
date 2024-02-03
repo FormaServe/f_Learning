@@ -1,9 +1,0 @@
-# Ansible Workshop on IBM i
-# Copyright © FormaServe Systems Ltd 2022
-# April 2022
-#
-user_profile: JRIDDLE
-user_state: present
-
-
-
