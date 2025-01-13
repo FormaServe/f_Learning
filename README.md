@@ -8,7 +8,7 @@ This repo contains information that we hope you will find helpful when completin
 
 You will also find examples & information that we have used when giving presentations/workshops at IBM i User Groups around the world.
 
-We are still providing IBM i training in these strange times.  [Get in contact here.](https://www.formaserve.co.uk/location.php)
+We are still providing IBM i training.  [Get in contact here.](https://www.formaserve.co.uk/location.php)
 
 If you have any questions or comments, we will be happy to help you.
 
@@ -22,8 +22,8 @@ While you are here, why not visit our training videos, [which can be found here.
 
 ## ✔️ YouTube Videos
 
-- Our YouTube channel can be found [here.](https://www.youtube.com/FormaServeSystemsLtdLoughton)
-- Subscribe to our YouTube channel to get the latest news &amp; updates on our f_Learning videos at this [link.](https://www.youtube.com/FormaServeSystemsLtdLoughton?sub_confirmation=1 )
+- Our YouTube channel can be found [here.](https://www.youtube.com/@FormaServe)
+- Subscribe to our YouTube channel to get the latest news &amp; updates on our f_Learning videos at this [link.](https://www.youtube.com/@FormaServe?sub_confirmation=1 )
 
 ![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
 ![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCQtPrEz09kfRhrKmx9xyGWQ?style=social)
@@ -33,17 +33,11 @@ While you are here, why not visit our training videos, [which can be found here.
 
 Check out IBMs customer stories website, on how we use Open Source on IBM i to submit VAT (Value Added Tax) to the UK Government. [Click here.](https://www.ibm.com/it-infrastructure/us-en/resources/power/ibm-i-customer-stories/#/FormaServe-systems/)
 
-## 🔗 IBM Request for Enhancements Links
+## ✔️ PowerWire
 
-- [For PASE/Open Source](http://bit.ly/ibm-rfe-all-pase)
-- [For IBM i](https://www.ibm.com/developerworks/rfe/execute?use_case=changeRequestLanding&BRAND_ID=352&PROD_ID=1476&x=14&y=12)
-
-## 🔗 Other IBM i Open Source Resources
-
-- Checkout IBMs Open Source page, some great stuff there! - [Links here.](https://ibm.github.io/ibmi-oss-resources/)
-- Checkout our PowerWire articles, more great stuff! - [Links here.](https://powerwire.eu/author/andy-youens)
-
-## ✍🏻 Authors
+- A great resource for everything IBM i - [Links here.](https://powerwire.uk)
+  
+- ## ✍🏻 Authors
 
 FormaServe Systems Ltd - _All work_ - [FormaServe](https://www.formaserve.co.uk)
 
@@ -64,6 +58,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - Twitter: https://twitter.com/FormaServe
 - Website: https://learning.formaserve.co.uk
 - Website: https://www.formaserve.co.uk
+- Website: https://powerwire.uk
 
 <p>
   <h2 align="left">☕Support</h2>
@@ -81,4 +76,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- **© 1990 - 2023 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
+- **© 1990 - 2025 [FormaServe Systems Ltd](https://www.formaserve.co.uk)**
+
+## 🔗 Other IBM i Open Source Resources
+
+- Checkout IBMs Open Source page, some great stuff there! - [Links here.](https://ibm.github.io/ibmi-oss-resources/)
